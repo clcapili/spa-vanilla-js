@@ -96,7 +96,7 @@ button:hover {
     text-decoration: none;
 }
 
-nav .nav-item {
+.nav .nav-link {
     display: inline-block;
     background-color: #FFFFFF;
     color: #000000;
@@ -109,7 +109,7 @@ nav .nav-item {
     transition: all .3s ease;
 }
 
-nav .nav-item:hover {
+.nav .nav-link:hover {
     background-color: #000000;
     color: #FFFFFF;
 }

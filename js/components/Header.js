@@ -11,9 +11,9 @@ export function Header() {
                     <a href="/" data-link>Brandx</a>
                 </div>
 
-                <nav>
-                    <a href="/gift-cards/" class="nav-item" data-link>Gift Cards</a>
-                    <a href="/e-gifts/" class="nav-item" data-link>Send E-Gift</a>
+                <nav class="nav">
+                    <a href="/gift-cards/" class="nav-link" data-link>Gift Cards</a>
+                    <a href="/e-gifts/" class="nav-link" data-link>Send E-Gift</a>
                 </nav>
             </div>
         </header>

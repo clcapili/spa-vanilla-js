@@ -2,9 +2,10 @@ import { router } from './router.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     document.body.addEventListener('click', (e) => {
-        if (e.target.matches('[data-link]')) {
+        const link = e.target.closest('[data-link]');
+        if (link) {
             e.preventDefault();
-            history.pushState(null, null, e.target.href);
+            history.pushState(null, null, link.href);
             router();
         }
     });

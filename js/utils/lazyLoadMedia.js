@@ -8,7 +8,6 @@ export function lazyLoadMedia() {
 
                 if (el.tagName === 'IMG') {
                     el.src = el.dataset.src;
-                    if (el.dataset.srcset) el.srcset = el.dataset.srcset;
                 }
 
                 el.classList.remove('lazy');

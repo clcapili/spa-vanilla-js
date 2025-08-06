@@ -26,7 +26,9 @@ export async function router() {
     const html = Layout(rawHtml);
 
     const app = document.getElementById('app');
-    if (!app) return console.error('Missing #app container');
+    if (!app) {
+        return console.error('Missing #app container');
+    }
 
     app.innerHTML = html;
 

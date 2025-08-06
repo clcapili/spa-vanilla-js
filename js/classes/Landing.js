@@ -16,7 +16,7 @@ class Landing extends AbstractView {
             </div>
 
             <div class="container">
-                <img data-src="/images/z_modules/placeholder_720w.jpg" alt="gray placeholder image" class="lazy" />
+                <img data-src="/images/z_modules/placeholder_720w.jpg" alt="gray placeholder image" class="img-fluid lazy" />
             </div>
         `;
     }

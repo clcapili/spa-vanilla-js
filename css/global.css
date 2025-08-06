@@ -124,6 +124,20 @@ footer {
     min-height: 480px;
 }
 
+/* animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (min-width: 576px) {
     .container {
         max-width: 540px;

@@ -30,6 +30,12 @@ export async function router() {
 
     app.innerHTML = html;
 
+    // fade in
+    const main = app.querySelector('main');
+    if (main) {
+        main.classList.add('fade-in');
+    }
+
     // set current year in footer
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 

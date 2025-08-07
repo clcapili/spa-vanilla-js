@@ -1,5 +1,5 @@
 import AbstractView from './AbstractView.js';
-import { lazyLoadMedia } from '../utils/lazyLoadMedia.js';
+import { lazyLoadMedia, cleanupLazyMedia } from '../utils/lazyLoadMedia.js';
 
 class Landing extends AbstractView {
     constructor(params) {
@@ -24,7 +24,7 @@ class Landing extends AbstractView {
     async onMount() {
         lazyLoadMedia();
     }
-    
+
     destroy() {
         cleanupLazyMedia();
         super.destroy();

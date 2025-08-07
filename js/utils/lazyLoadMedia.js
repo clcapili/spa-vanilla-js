@@ -1,7 +1,9 @@
+let observer = null;
+
 export function lazyLoadMedia() {
     const lazyElements = document.querySelectorAll('img.lazy');
 
-    const observer = new IntersectionObserver((entries, obs) => {
+    observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const el = entry.target;

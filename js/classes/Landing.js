@@ -24,6 +24,11 @@ class Landing extends AbstractView {
     async onMount() {
         lazyLoadMedia();
     }
+    
+    destroy() {
+        cleanupLazyMedia();
+        super.destroy();
+    }
 }
 
 export default Landing;

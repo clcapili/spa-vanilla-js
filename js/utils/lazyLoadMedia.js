@@ -21,3 +21,10 @@ export function lazyLoadMedia() {
 
     lazyElements.forEach(el => observer.observe(el));
 }
+
+export function cleanupLazyMedia() {
+    if (observer) {
+        observer.disconnect();
+        observer = null;
+    }
+}

@@ -1,21 +1,27 @@
-import AbstractView from './AbstractView.js';
+import AbstractView from './jsViewAbstractView.js';
 
 class MyAccount extends AbstractView {
     constructor(params) {
         super(params);
-        this.setTitle('My Account');
-        this.setMeta('description', 'My Account page loaded');
     }
 
     async getHtml() {
-        await this.loadCSS('/z_modules/_Website_settings/css/modules/my-account.css');
+        const skin = await this.getSkinConfig();
+        const basePath = skin.basePath || '';
+        const pageData = skin.classes.MyAccount;
 
-        return `
+        // set title and meta
+        this.setTitle(pageData.documentTitle);
+        this.setMeta('description', pageData.documentMeta);
+        
+        let html = `
             <div class="container">
                 <h2>My Account</h2>
                 <p>This section was loaded dynamically as a class module.</p>
             </div>
         `;
+
+        return html;
     }
 
     async onMount() {

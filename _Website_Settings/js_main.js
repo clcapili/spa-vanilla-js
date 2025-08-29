@@ -1,15 +1,15 @@
-import { router, loadRoutes } from './router.js';
-import { lazyLoadMedia } from './utils/lazyLoadMedia.js';
+import { router, loadRoutes } from './js_router.js';
+import { lazyLoadMedia } from './jsUtilsLazyLoadMedia.js';
 
 async function initLayout() {
     const headerContainer = document.getElementById('headerContainer');
     const footerContainer = document.getElementById('footerContainer');
 
-    const HeaderModule = (await import('./components/Header.js')).default;
-    const FooterModule = (await import('./components/Footer.js')).default;
+    const HeaderComponent = (await import('./jsComponentHeader.js')).default;
+    const FooterComponent = (await import('./jsComponentFooter.js')).default;
 
-    const header = new HeaderModule();
-    const footer = new FooterModule();
+    const header = new HeaderComponent();
+    const footer = new FooterComponent();
 
     headerContainer.innerHTML = await header.getHtml();
     footerContainer.innerHTML = await footer.getHtml();

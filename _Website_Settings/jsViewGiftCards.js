@@ -1,4 +1,4 @@
-import AbstractView from '../AbstractView.js';
+import AbstractView from './jsViewAbstractView.js';
 
 class GiftCards extends AbstractView {
     constructor(params) {
@@ -14,8 +14,8 @@ class GiftCards extends AbstractView {
         this.setTitle(pageData.documentTitle);
         this.setMeta('description', pageData.documentMeta);
         
-        // load page-specific CSS
-        await this.loadPageAssetsCSS('gift-cards');
+        // load all page-specific CSS + JS in one go
+        await this.loadPageAssets('gift-cards');
 
         let html = `
             <section id="subpage-banner_1-img-overlay">
@@ -153,8 +153,8 @@ class GiftCards extends AbstractView {
     }
 
     async onMount() {
-        // load page-specific JS
-        await this.loadPageAssetsJS('gift-cards');
+        // any page-specific logic can go here (scripts already handled by loadPageAssets)
+        console.log("GiftCards page mounted");
     }
 
     destroy() {

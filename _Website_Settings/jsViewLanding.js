@@ -1,5 +1,4 @@
-import AbstractView from './AbstractView.js';
-import { lazyLoadMedia, cleanupLazyMedia } from '../utils/lazyLoadMedia.js';
+import AbstractView from './jsViewAbstractView.js';
 
 class Landing extends AbstractView {
     constructor(params) {
@@ -14,9 +13,9 @@ class Landing extends AbstractView {
         // set title and meta
         this.setTitle(pageData.documentTitle);
         this.setMeta('description', pageData.documentMeta);
-
-        // load page-specific CSS
-        await this.loadPageAssetsCSS('landing');
+        
+        // load all page-specific CSS + JS in one go
+        await this.loadPageAssets('landing');
         
         let html = `
             <section id="cardBackground" class="${pageData.banner.type}">
@@ -70,7 +69,8 @@ class Landing extends AbstractView {
     }
 
     async onMount() {
-        
+        // any page-specific logic can go here (scripts already handled by loadPageAssets)
+        console.log("Landing page mounted");
     }
 
     destroy() {

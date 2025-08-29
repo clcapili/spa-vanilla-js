@@ -1,4 +1,4 @@
-import { lazyLoadMedia, cleanupLazyMedia } from './utils/lazyLoadMedia.js';
+import { lazyLoadMedia, cleanupLazyMedia } from './jsUtilsLazyLoadMedia.js';
 
 let currentView = null;
 let routes = [];
@@ -12,13 +12,13 @@ export async function loadRoutes() {
     const basePath = configModule.default.basePath || '';
 
     routes = [
-        { path: `/${basePath}/gift-cards/custom-cards/`, view: () => import('./pages/GiftCards/CustomCards.js') },
-        { path: `/${basePath}/gift-cards/`, view: () => import('./pages/GiftCards/GiftCards.js') },
-        { path: `/${basePath}/e-gifts/`, view: () => import('./pages/EGifts/EGifts.js') },
-        { path: `/${basePath}/check-balance/`, view: () => import('./pages/CheckBalance.js') },
-        { path: `/${basePath}/my-account/`, view: () => import('./pages/MyAccount.js') },
-        { path: `/${basePath}/rewards/`, view: () => import('./pages/Rewards.js') },
-        { path: `/${basePath}/`, view: () => import('./pages/Landing.js') }, // fallback last
+        { path: `/${basePath}/gift-cards/custom-cards/`, view: () => import('./jsViewGiftCardsCustomCards.js') },
+        { path: `/${basePath}/gift-cards/`, view: () => import('./jsViewGiftCards.js') },
+        { path: `/${basePath}/e-gifts/`, view: () => import('./jsViewEGifts.js') },
+        { path: `/${basePath}/check-balance/`, view: () => import('./jsViewCheckBalance.js') },
+        { path: `/${basePath}/my-account/`, view: () => import('./jsViewMyAccount.js') },
+        { path: `/${basePath}/rewards/`, view: () => import('./jsViewRewards.js') },
+        { path: `/${basePath}/`, view: () => import('./jsViewLanding.js') }, // fallback last
     ];
 
     routes.sort((a, b) => b.path.length - a.path.length); // longest path first

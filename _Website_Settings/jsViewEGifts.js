@@ -1,22 +1,28 @@
-import AbstractView from './AbstractView.js';
+import AbstractView from './jsViewAbstractView.js';
 
 class EGifts extends AbstractView {
     constructor(params) {
         super(params);
-        this.setTitle('E-Gifts');
-        this.setMeta('description', 'Send an e-gift card instantly via email.');
     }
 
     async getHtml() {
-        await this.loadCSS('/z_modules/_Website_settings/css/modules/e-gifts.css');
+        const skin = await this.getSkinConfig();
+        const basePath = skin.basePath || '';
+        const pageData = skin.classes.EGifts;
 
-        return `
+        // set title and meta
+        this.setTitle(pageData.documentTitle);
+        this.setMeta('description', pageData.documentMeta);
+        
+        let html = `
             <div class="container">
                 <h2>Send E-Gift Card</h2>
                 <p>This section was loaded dynamically as a class module.</p>
                 <button class="buy">Buy Now</button>
             </div>
         `;
+
+        return html;
     }
 
     async onMount() {

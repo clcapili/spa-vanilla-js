@@ -1,4 +1,4 @@
-import AbstractView from "../pages/AbstractView.js";
+import AbstractView from "./jsViewAbstractView.js";
 
 class Footer extends AbstractView {
     constructor(params) {

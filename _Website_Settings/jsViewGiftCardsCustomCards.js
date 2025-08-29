@@ -1,4 +1,4 @@
-import AbstractView from '../AbstractView.js';
+import AbstractView from './jsViewAbstractView.js';
 
 class CustomCards extends AbstractView {
     constructor(params) {

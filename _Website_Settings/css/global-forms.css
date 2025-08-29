@@ -1,0 +1,874 @@
+
+
+/* Last updated: JJ#498480, JJ#581076 */
+
+@charset "utf-8";
+
+/* Form Fields
+  ============================ */
+input[type="text"],
+input[type="password"],
+input[type="submit"],
+input[type="number"],
+input[type="search"],
+label,
+textarea,
+select {
+    display: block;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+    background-color: #f9f9f9;
+    border: 1px solid #949494;
+    font-size: 14px;
+    line-height: 130%;
+    color: #343434;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="search"],
+select,
+textarea {
+    width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="search"],
+    select,
+    textarea {
+        font-size: 14px;
+    }
+}
+
+input.datepicker {
+    -moz-appearance: menu;
+    -webkit-appearance: menulist;
+    appearance: menu;
+}
+
+button:disabled,
+button:disabled:hover,
+input:disabled,
+select:disabled {
+    background-color: #d8d8d8;
+    color: #969696;
+}
+
+input[type="checkbox"]:disabled:before {
+    background-color: #dcdcdc;
+}
+
+label,
+fieldset legend {
+    font-size: 13px;
+    line-height: 120%;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+/* Hidden labels only for accessiblity */
+label.hiddenLbl {
+    font-size: 0;
+    margin: 0;
+}
+
+#cwsForm h2 {
+    border-bottom: 1px solid #b4b4b4;
+    margin: 15px 0 27px 0;
+    padding: 0 0 6px 0;
+}
+
+.headerNotation {
+    margin: 0 0 28px 0;
+}
+
+/* Custom Checkbox/Radio */
+input[type="checkbox"]+label {
+    padding-left: 20px;
+    line-height: 130%;
+    position: relative;
+}
+
+input[type="checkbox"]+label:before {
+    position: absolute;
+    left: 0;
+}
+
+input[type="checkbox"]:focus+label {
+    text-decoration: underline;
+}
+
+input[type="radio"]:focus+label {
+    text-decoration: underline;
+    outline: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+
+input[type="checkbox"]+label,
+input[type="radio"]+label {
+    cursor: pointer;
+    text-transform: none;
+    font-weight: normal;
+    line-height: 150%;
+}
+
+input[type="checkbox"]+label:before,
+input[type="radio"]+label:before {
+    font-size: 18px;
+    line-height: 80%;
+    padding: 2px;
+    font-weight: bold;
+    color: #000;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #8f8f8f;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px 0 0;
+    background-color: #fff;
+    transition: border 0.25s;
+}
+
+input[type="checkbox"]+label:hover:before,
+input[type="radio"]+label:hover:before {
+    border: 1px solid #000;
+}
+
+input[type="radio"]+label:before {
+    border-radius: 100%;
+}
+
+input[type="radio"]:focus+label:before {
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+input[type="checkbox"]+label:before {
+    content: " ";
+}
+
+input[type="checkbox"]:checked+label:before {
+    content: "\2713";
+    font-size: 13px;
+    color: #118815;
+}
+
+input[type="radio"]+label:before {
+    content: " ";
+    float: left;
+    clear: both;
+}
+
+input[type="radio"]:checked+label:before {
+    content: "";
+    background-color: #2d2d2d;
+    box-shadow: inset 0 0 0 3px #fff;
+    border: 1px solid #000;
+}
+
+/* Remember Me checkbox is hidden by default which gets removed from DOM in js */
+label[for="cws_chk_remember"] {
+    display: none;
+}
+
+.radios .val {
+    position: static;
+    float: left;
+    display: block;
+    margin: 2px 0 0 10px;
+}
+
+.radio_label {
+    float: left;
+}
+
+.radios {
+    padding: 8px 0 8px 0;
+}
+
+/* Form Wrappers */
+.form {
+    margin: 0 0 25px 0;
+}
+
+.field,
+.half_field {
+    width: 100%;
+    margin: 0 0 17px 0;
+    position: relative;
+    clear: both;
+}
+
+.field {
+    max-width: 380px;
+}
+
+.half_field {
+    max-width: 190px;
+}
+
+.half_field .val {
+    width: 200%;
+    left: 0;
+    text-align: left;
+    right: initial;
+}
+
+.float_left {
+    float: left;
+}
+
+/* Buttons */
+.btn,
+input[type="submit"] {
+    display: block;
+    background-color: #b4b4b4;
+    color: #fff;
+    text-align: center;
+    border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 120%;
+    font-weight: 600;
+    padding: 10px 27px 10px 27px;
+    margin: 0;
+    background-position: right;
+    background-size: 24px 15px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-family: "Open Sans", Arial, sans-serif;
+    border-radius: 2px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .useThisField .btn, #cws_btn_shipChange {
+        font-size: 13px;
+        padding: 10px 16px 10px 17px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="search"],
+    select,
+    textarea {
+        font-size: 16px;
+    }
+}
+}
+
+.btn.accordion-toggle,
+.btn.accordion-toggle:hover {
+    background-color: #b4b4b4;
+}
+
+a.btn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+a.btn:hover {
+    color: #fff !important;
+}
+
+.btn:hover,
+input[type="submit"]:hover {
+    background-color: #a4a4a4;
+}
+
+.btn .material-icons {
+    font-size: 18px;
+    vertical-align: top;
+    margin: 0 5px 0 0;
+}
+
+/* Validation */
+input[type="text"].invalid,
+input[type="password"].invalid,
+input[type="number"].invalid,
+input[type="search"].invalid,
+select.invalid {
+    border: 1px solid #aa0d0d;
+}
+
+input[type="text"].invalid,
+input[type="password"].invalid,
+input[type="number"].invalid {
+    background-image: url(/cws4.0/global-unix/images/forms/icon--x.svg);
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    background-size: 14px 14px;
+}
+
+input[type="text"].valid,
+input[type="password"].valid,
+input[type="number"].valid {
+    background-image: url(/cws4.0/global-unix/images/forms/icon--check.svg);
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    background-size: 14px 14px;
+    border: 1px solid #8f8f8f;
+}
+
+input.datepicker.invalid,
+input.datepicker.valid {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+select.valid {
+    border: 1px solid #8f8f8f;
+}
+
+select.invalid,
+select.valid {
+    background-position: 92% center;
+}
+
+input[type="text"].invalid+span.val,
+input[type="number"].invalid+span.val,
+input[type="password"].invalid+span.val,
+input[type="search"].invalid+span.val,
+select.invalid~span.val {
+    display: block;
+}
+
+span.pw-message {
+    display: block;
+    margin: 5px 0px;
+    padding-left: 28px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    font-size: 13px;
+    font-style: italic;
+}
+
+span.pw-success {
+    background-image: url(/cws4.0/global-unix/images/forms/icon--check.svg);
+}
+
+span.pw-fail {
+    background-image: url(/cws4.0/global-unix/images/forms/icon--x.svg);
+}
+
+fieldset.invalid .val {
+    display: block;
+}
+
+.val {
+    text-align: right;
+    position: absolute;
+    right: 2%;
+    bottom: -18px;
+    font-size: 12px;
+    color: #aa0d0d;
+    display: none;
+}
+
+button.btn~.val {
+    position: static;
+    margin: 10px 0 0 0;
+    text-align: left;
+}
+
+.api_error {
+    font-size: 11px;
+    font-style: italic;
+    color: #aa0d0d;
+    padding: 10px 0 10px 0;
+    display: none;
+}
+
+#cws_api_errors {
+    font-size: 13px;
+    font-style: italic;
+    color: #aa0d0d;
+    padding: 10px 0 10px 0;
+    display: none;
+}
+
+#greeting {
+    font-weight: normal;
+}
+
+span.val.submit {
+    display: none;
+}
+
+input[type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+input[type="submit"].invalid~span.submit,
+button.btn~span.submit {
+    display: none;
+    position: static;
+    text-align: left;
+    margin: 15px 0 0 0;
+}
+
+input[type="submit"]~span.submit,
+button.btn~span.submit {
+    display: none;
+    position: static;
+    text-align: left;
+    margin: 15px 0 0 0;
+}
+
+input[type="checkbox"]~span.valIcon {
+    display: none;
+    position: absolute;
+    right: -23px;
+    top: 9px;
+    width: 13px;
+    height: 13px;
+    display: block;
+    background-repeat: no-repeat;
+}
+
+input[type="checkbox"].invalid~span.val {
+    display: block;
+    right: auto;
+    text-align: left;
+}
+
+.ajaxErrorOverlay {
+    position: fixed;
+    top: 186px;
+    left: 42.5%;
+    width: 200px;
+    border: 1px solid #aa0d0d;
+    padding: 50px;
+    text-align: center;
+    color: #aa0d0d;
+    font-size: 16px;
+    font-weight: bold;
+    display: none;
+    background-color: #e1bfbf;
+    z-index: 9999;
+}
+
+/* Logout */
+.utilityNav #logout {
+    display: none;
+}
+
+/* Question Icon */
+.questionIcon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 2px 0 0 8px;
+    cursor: pointer;
+    background-image: url(/cws4.0/global-unix/images/forms/question-icon.png);
+    background-size: 20px;
+    position: relative;
+}
+
+.questionIcon.captcha {
+    margin: 5px 0 0 8px;
+}
+
+.questionIcon.captcha a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.questionIcon:hover .questionBox,
+.questionIcon:hover .sideArrow,
+.questionIcon:focus .questionBox,
+.questionIcon:focus .sideArrow {
+    display: block;
+}
+
+.questionBox {
+    position: absolute;
+    display: none;
+    width: 150px;
+    padding: 8px;
+    font-size: 11px;
+    border: 1px solid #8f8f8f;
+    background-color: #fff;
+    left: 24px;
+    top: -8px;
+}
+
+.sideArrow {
+    width: 8px;
+    height: 13px;
+    display: none;
+    background-image: url(/cws4.0/global-unix/images/forms/sideArrow.png);
+    position: absolute;
+    left: 18px;
+    top: 2px;
+}
+
+/* Dynamic Messages */
+#cws_dynamic_inactiveMsg,
+#cws_dynamic_tempPw,
+#cws_dynamic_loggedOutMsg {
+    color: #aa0d0d;
+    display: none;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 10px 0 20px 0;
+}
+
+#cws_dynamic_inactiveMsg {
+    text-align: center;
+}
+
+#cws_output_action {
+    display: none;
+}
+
+.success_pane {
+    border: 1px solid #00a651;
+    background-color: #dcf6d9;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 0 0 30px 0;
+}
+
+/* Field Hints */
+input[type="text"].invalid~.fieldHint,
+input[type="text"].valid~.fieldHint,
+input[type="number"].invalid~.fieldHint,
+input[type="number"].valid~.fieldHint {
+    display: none;
+}
+
+/* Grey Boxes */
+.greyBox {
+    background: #f7f7f7;
+    padding: 10px 15px;
+}
+
+.greyBox input[type="text"],
+.greyBox input[type="number"],
+.greyBox input[type="password"],
+.greyBox input[type="search"],
+.greyBox select,
+.greyBox textarea {
+    background: #fff;
+}
+
+/* Checkout */
+.wizard span {
+    color: #757575;
+}
+
+.wizard {
+    border: 1px solid #ccc;
+    margin: 0px 0 20px;
+    padding: 22px;
+    text-align: center;
+    line-height: 160%;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .wizard {
+        display: none;
+    }
+}
+
+.wizard span~span:before {
+    content: "\00A0\00A0\003E\00A0\00A0";
+    margin: 0px 5px 0;
+}
+
+.wizard #currentStep {
+    color: #000;
+}
+
+.checkoutClm {
+    width: 50%;
+    float: left;
+}
+
+.checkoutClm h2 {
+    margin: 0 3px 35px 3px;
+    padding: 10px;
+    border: none;
+    font-weight: 600;
+    text-align: center;
+    background-color: #f1f1f1;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+#maintenanceContentGrey {
+    margin: 25px 0 0 0;
+    padding: 25px 5%;
+    box-sizing: border-box;
+    background: #f4f4f4;
+    font-size: 14px;
+    line-height: 170%;
+}
+
+#maintenanceContentWhite {
+    margin: 25px 0 0 0;
+    padding: 25px 5%;
+    box-sizing: border-box;
+    background: #ffffff;
+    font-size: 14px;
+    line-height: 170%;
+}
+
+
+#support {
+    margin: 25px 0 0 0;
+    padding: 15px 5% 15px 5%;
+    box-sizing: border-box;
+    background: #f4f4f4;
+    font-size: 13px;
+}
+
+#support h2 {
+    margin: 0px;
+    font-size: 17px;
+    margin: 0 0 6px 0;
+}
+
+#support h3 {
+    margin: 0px;
+    font-size: 15px;
+    margin: 0 0 6px 0;
+}
+
+#support p {
+    font-size: 13px;
+}
+
+/* Transactions Table */
+.dataTables_wrapper {
+    overflow-x: auto;
+}
+
+.dataTable,
+#onHoldCardsHold table {
+    width: 100%;
+    border-left: 1px solid #b4b4b4;
+    border-top: 1px solid #b4b4b4;
+    font-size: 12px;
+    line-height: 140%;
+}
+
+#onHoldCardsHold table#cws_output_onHoldCards {
+    border-top: none;
+}
+
+.dataTable th,
+#onHoldCardsHold th {
+    text-align: left;
+    background-color: #f7f7f7;
+    font-size: 13px;
+    font-weight: bold;
+    border-right: 1px solid #b4b4b4;
+    border-bottom: 1px solid #b4b4b4;
+    padding: 7px 10px 7px 10px;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.dataTable td,
+#onHoldCardsHold td {
+    text-align: left;
+    border-right: 1px solid #b4b4b4;
+    border-bottom: 1px solid #b4b4b4;
+    padding: 5px 10px 5px 10px;
+    vertical-align: top;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.dataTable tr:nth-child(odd),
+#onHoldCardsHold tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.dataTable tr:nth-child(even),
+#onHoldCardsHold tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.dataTable tr td:nth-child(4) {
+    color: #107f13;
+}
+
+.dataTable tr td.negative {
+    color: #aa0d0d;
+}
+
+.dataTable tr:hover,
+#onHoldCardsHold tr:hover {
+    background-color: #fdfee3;
+    transition: background-color 700ms linear;
+    cursor: pointer;
+}
+
+/* Data Table */
+.dataTable th:nth-child(2),
+.dataTable tr.odd td:nth-child(2),
+.dataTable tr.even td:nth-child(2) {
+    display: none;
+}
+
+.sorting,
+.sorting_desc,
+.sorting_asc {
+    background-repeat: no-repeat;
+    background-position: 96% center;
+}
+
+.sorting {
+    background-image: url(/cws4.0/global-unix/images/check-card-balance/sortingOff.png);
+}
+
+.sorting_asc {
+    background-image: url(/cws4.0/global-unix/images/check-card-balance/sortingDown.png);
+}
+
+.sorting_desc {
+    background-image: url(/cws4.0/global-unix/images/check-card-balance/sortingUp.png);
+}
+
+.dataTables_info {
+    font-size: 12px;
+    display: inline-block;
+    padding: 10px 0 0 0;
+    font-style: italic;
+}
+
+.paginate_button {
+    font-size: 12px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.paginate_button.current {
+    color: #000;
+    text-decoration: none;
+}
+
+.paginate_button+.paginate_button {
+    margin-left: 5px;
+}
+
+.paginate_button.previous,
+.paginate_button.last {
+    margin: 0 0 0 10px;
+}
+
+.paginate_button.next.disabled,
+.paginate_button.previous.disabled {
+    display: none;
+}
+
+.dataTables_paginate .previous+span {
+    margin: 0 15px;
+}
+
+.paginate_button.borderBtn {
+    padding: 2px 5px;
+}
+
+.ellipsis {
+    margin: 0 5px;
+}
+
+.dataTables_length {
+    padding: 0 0 20px 0;
+}
+
+.dataTables_length select {
+    width: 75px;
+    display: inline-block;
+}
+
+.dataTables_info {
+    float: left;
+}
+
+#recaptcha {
+    margin: 0 0 30px 0;
+}
+
+.dataTables_paginate {
+    float: right;
+    margin: 10px 0 0 0;
+}
+
+/* Unsubscribe */
+.marquiformcontainer input[type="text"] {
+    margin: 0 0 15px 0;
+}
+
+.marquiformcontainer span br {
+    display: none;
+}
+
+@media only screen and (min-width: 100px) and (max-width: 768px) {
+
+    .sortBtns,
+    .showLocInfo {
+        display: none;
+    }
+
+    .dynamicTable th {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .field {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 500px) {
+
+    .dataTable th,
+    .dataTable td,
+    .dataTables_info,
+    .dataTables_paginate,
+    .paginate_button {
+        font-size: 11px;
+    }
+
+    #cws_list_gcNum {
+        font-size: 11px;
+    }
+
+    #cws_frm_login, #cws_frm_forgotPassword {
+        padding: 0 20px;
+    }
+}

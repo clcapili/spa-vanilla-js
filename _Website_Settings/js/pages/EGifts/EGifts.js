@@ -8,7 +8,7 @@ class EGifts extends AbstractView {
     }
 
     async getHtml() {
-        await this.loadCSS('/css/modules/e-gifts.css');
+        await this.loadCSS('/z_modules/_Website_settings/css/modules/e-gifts.css');
 
         return `
             <div class="container">

@@ -1,0 +1,1 @@
+console.log('Gift Cards Custom Card JS here')
